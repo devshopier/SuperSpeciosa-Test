@@ -78,7 +78,7 @@
         </span>
       {%- else -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular">
+        <span class="price-item price-item--regular" {% if block.settings.price_color != blank %}style="color: {{ block.settings.price_color }}"{% endif %}>
           {{ money_price }}
         </span>
       {%- endif -%}
@@ -97,7 +97,7 @@
         </span>
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-      <span class="price-item price-item--sale price-item--last">
+      <span class="price-item price-item--sale price-item--last" {% if block.settings.price_color != blank %}style="color: {{ block.settings.price_color }}"{% endif %}>
         {{ money_price }}
       </span>
     </div>
