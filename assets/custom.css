@@ -1,0 +1,5 @@
+.product-grid li.grid__item {
+    border: 1px solid #A79C9C;
+    border-radius: 10px;
+    padding: 10px;
+}
