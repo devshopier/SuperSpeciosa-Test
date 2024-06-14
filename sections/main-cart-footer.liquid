@@ -37,6 +37,12 @@
         </cart-note>
       {%- endif -%}
 
+      {% if cart != empty %}
+        <div class="remove_all_products">
+          <button class="button">Remove All</button>
+        </div>
+      {% endif %}
+
       <div class="cart__blocks">
         {% for block in section.blocks %}
           {%- case block.type -%}
