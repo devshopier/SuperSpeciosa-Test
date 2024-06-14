@@ -13,4 +13,9 @@ $(document).ready(function(){
             }
         });
     })
+
+    $('.extra-info-title a').on('click', function(){
+        $('.extra-info-content').slideToggle();
+        $(this).toggleClass('rotate-icon');
+    })
 })

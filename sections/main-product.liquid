@@ -191,6 +191,17 @@
                     {{ product.description }}
                   </div>
                 {%- endif -%}
+              {%- when 'extra_info' -%}
+                <div class="extra-info-panel">
+                  {% if block.settings.extra_title != blank and block.settings.extra_content != blank %}
+                    <div class="extra-info-title">
+                      <a href="javascript:;"><p>{{ block.settings.extra_title }}</p>{% render 'icon-arrow-down' %}</a>
+                    </div>
+                    <div class="extra-info-content">
+                      {{ block.settings.extra_content }}
+                    </div>
+                  {% endif %}
+                </div>                
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -801,6 +812,22 @@
           "type": "color",
           "id": "price_color",
           "label": "Change Price Color"
+        }
+      ]
+    },
+    {
+      "type": "extra_info",
+      "name": "Extra Information",
+      "settings": [
+        {
+          "type": "text",
+          "id": "extra_title",
+          "label": "Extra Info Title"
+        },
+        {
+          "type": "richtext",
+          "id": "extra_content",
+          "label": "Extra Info Content"
         }
       ]
     },
